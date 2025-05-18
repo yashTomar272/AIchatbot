@@ -47,7 +47,7 @@ const submit = async (e) => {
       return;
     }
 
-    const response = await axios.post("http://localhost:8000/signup", values);
+    const response = await axios.post("https://ai-chatbot-wine-chi-60.vercel.app/signup", values);
     if(response.status===200){
       toast.success(response.data.message)
       navigate("/login");

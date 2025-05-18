@@ -22,7 +22,7 @@ console.log(userId); // Ye tumhe stored id return karega
 useEffect(() => {
   const fetchHistory = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/history/${userId}`);
+      const response = await axios.get(`https://ai-chatbot-wine-chi-60.vercel.app/api/history/${userId}`);
       setHistory(response.data.reverse());
     } catch (error) {
       console.error("History fetch karne me error:", error);
@@ -51,7 +51,7 @@ const headers={
 }
 useEffect(()=>{
   const fetch=async()=>{
-const response=await axios.get("http://localhost:8000/get-user-information",{headers});
+const response=await axios.get("https://ai-chatbot-wine-chi-60.vercel.app/get-user-information",{headers});
 setProfile(response.data.username);
   }
   fetch();

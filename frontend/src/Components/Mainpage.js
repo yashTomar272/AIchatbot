@@ -73,7 +73,7 @@ const chatEndRef = useRef(null);
 
         chatHistory.push({ role: "user", content: userMessage }); // History में Add करो
 
-        const response = await axios.post("http://localhost:8000/api/chat", {
+        const response = await axios.post("https://ai-chatbot-wine-chi-60.vercel.app/api/chat", {
             userId: userId, // 🔥 userId को body में भेजो
             message: userMessage,
             history: chatHistory, // पुराना डाटा भेजो
@@ -98,7 +98,7 @@ const headers={
 }
 useEffect(() => {
   const fetch = async () => {
-    const response = await axios.get("http://localhost:8000/get-user-information", { headers });
+    const response = await axios.get("https://ai-chatbot-wine-chi-60.vercel.app/get-user-information", { headers });
     setProfile(response.data.username);
   };
   fetch();
