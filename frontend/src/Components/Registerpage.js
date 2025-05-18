@@ -16,6 +16,8 @@ import photo from "../imgs/photo.jpeg"
 export default function Registerpage() {
  const navigate=useNavigate();
 const dispatch=useDispatch();
+  const URL = process.env.REACT_APP_URL;
+
 
   const [Show, setShow] = useState(true);
   const handleShow = () => {
@@ -47,7 +49,7 @@ const submit = async (e) => {
       return;
     }
 
-    const response = await axios.post("https://ai-chatbot-wine-chi-60.vercel.app/signup", values);
+    const response = await axios.post(`${URL}/signup`, values);
     if(response.status===200){
       toast.success(response.data.message)
       navigate("/login");

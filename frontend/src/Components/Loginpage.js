@@ -12,6 +12,8 @@ import {  toast } from "react-toastify";
 import photo from "../imgs/photo.jpeg"
 
 export default function Loginpage() {
+   const URL = process.env.REACT_APP_URL;
+
  const navigate=useNavigate();
 const dispatch=useDispatch();
 
@@ -39,7 +41,7 @@ const submit = async (e) => {
       return;
     }
 
-    const response = await axios.post("/signin", values);
+    const response = await axios.post(`$URL}/signin`, values);
     dispatch(authActions.login());
     
 localStorage.setItem("id",response.data.id)
