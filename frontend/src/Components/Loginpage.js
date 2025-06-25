@@ -14,6 +14,8 @@ import photo from "../imgs/photo.jpeg"
 export default function Loginpage() {
  const navigate=useNavigate();
 const dispatch=useDispatch();
+const URL = "https://a-ichatbot-nine.vercel.app";
+console.log("URL:", URL);
 
   const [Show, setShow] = useState(true);
   const handleShow = () => {
@@ -39,7 +41,7 @@ const submit = async (e) => {
       return;
     }
 
-    const response = await axios.post("https://a-ichatbot-nine.vercel.app/signin", values);
+    const response = await axios.post(`${URL}/signin`, values);
     dispatch(authActions.login());
     
 localStorage.setItem("id",response.data.id)

@@ -14,6 +14,7 @@ import {  toast } from "react-toastify";
 import photo from "../imgs/photo.jpeg"
 
 export default function Registerpage() {
+  const URL="https://a-ichatbot-nine.vercel.app"
  const navigate=useNavigate();
 const dispatch=useDispatch();
 
@@ -47,7 +48,7 @@ const submit = async (e) => {
       return;
     }
 
-    const response = await axios.post("https://a-ichatbot-nine.vercel.app/signup", values);
+    const response = await axios.post(`${URL}/signup`, values);
     if(response.status===200){
       toast.success(response.data.message)
       navigate("/login");

@@ -18,11 +18,11 @@ const [LOG, setLOG] = useState("");
 console.log("history",history)
 const userId = localStorage.getItem("id");
 console.log(userId); // Ye tumhe stored id return karega
-
+ const URL="https://a-ichatbot-nine.vercel.app"
 useEffect(() => {
   const fetchHistory = async () => {
     try {
-      const response = await axios.get(`https://a-ichatbot-nine.vercel.app/api/history/${userId}`);
+      const response = await axios.get(`${URL}/api/history/${userId}`);
       setHistory(response.data.reverse());
     } catch (error) {
       console.error("History fetch karne me error:", error);
@@ -51,7 +51,7 @@ const headers={
 }
 useEffect(()=>{
   const fetch=async()=>{
-const response=await axios.get("https://a-ichatbot-nine.vercel.app/get-user-information",{headers});
+const response=await axios.get(`${URL}/get-user-information`,{headers});
 setProfile(response.data.username);
   }
   fetch();
