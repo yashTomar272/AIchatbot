@@ -14,7 +14,7 @@ const openai = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1",
   apiKey: process.env.OPENROUTER_API_KEY,
   defaultHeaders: {
-    "HTTP-Referer": "https://a-ichatbot-nine.vercel.app/",
+    "HTTP-Referer": "http://localhost:8000/",
     "X-Title": "Yash-AI-Chatbot",
   },
 });
