@@ -14,7 +14,7 @@ import {  toast } from "react-toastify";
 import photo from "../imgs/photo.jpeg"
 
 export default function Registerpage() {
-  const URL="http://localhost:8000"
+  const URL="https://a-ichatbot-three.vercel.app"
  const navigate=useNavigate();
 const dispatch=useDispatch();
 

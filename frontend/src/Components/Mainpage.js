@@ -9,7 +9,7 @@ import Sidebar from "./Sidebar";
 
 
 const Mainpage = () => {
-  const URL="http://localhost:8000"
+  const URL="https://a-ichatbot-three.vercel.app"
 
 const [profile,setProfile]=useState();
 const chatEndRef = useRef(null);
