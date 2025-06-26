@@ -14,10 +14,11 @@ const openai = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1",
   apiKey: process.env.OPENROUTER_API_KEY,
   defaultHeaders: {
-    "HTTP-Referer": "http://localhost:8000/",
+    "HTTP-Referer": "https://a-ichatbot-three.vercel.app/",
     "X-Title": "Yash-AI-Chatbot",
   },
 });
+
 
 const app = express();
 const PORT = process.env.PORT || 8000;
